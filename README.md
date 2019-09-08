@@ -109,3 +109,9 @@ After that, type
 
 so that we will be able to use express.
 
+When starting to code, it's interesting to install nodemon, which is a library that automatically restarts the server when a change is made. The "-D" is only for it to be installed as in Development mode.
+> npm install -D nodemon
+
+To start the server, type
+> nodemon server.js
+
