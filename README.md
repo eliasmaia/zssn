@@ -89,3 +89,23 @@ Fork this repo and send us a pull request when you think you are done. We will n
 Just create a new issue in this repo and we will respond and get back to you quickly.
 
 **Original test written by [Akita](https://t.co/W47ODZTOAc)**
+
+
+
+---------------------------------------
+## Solution
+In order to accomplish this challenge, I decided to use Javascropt (Node + Express). 
+
+# How to get started
+First, inside the directory of the project, type 
+
+> npm init -y
+
+This will create an default empty npm project, with a package.json file. 
+
+After that, type
+
+> npm install express
+
+so that we will be able to use express.
+
