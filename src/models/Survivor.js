@@ -41,6 +41,12 @@ const SurvivorSchema = new mongoose.Schema({
       required: true,
     },
   },
+  infections:{
+    type: Number
+  },
+  infected: {
+    type: Boolean
+  } 
 });
 
 mongoose.model("Survivor", SurvivorSchema);
