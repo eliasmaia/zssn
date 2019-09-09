@@ -13,7 +13,7 @@ const Survivor = mongoose.model('Survivor');
 
 app.get("/", (req, res) => {
   Survivor.create({
-    name: 'John',
+    name: 'Mauricio',
     age: 25,
     gender: 'Male',
     location: {

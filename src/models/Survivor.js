@@ -42,11 +42,13 @@ const SurvivorSchema = new mongoose.Schema({
     },
   },
   infections:{
-    type: Number
+    type: Number,
+    default: 0
   },
   infected: {
-    type: Boolean
-  } 
+    type: Boolean,
+    default: false
+  }
 });
 
 mongoose.model("Survivor", SurvivorSchema);

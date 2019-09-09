@@ -15,5 +15,7 @@ routes.get("/survivors", SurvivorController.index);
 routes.post("/survivors", SurvivorController.store);
 //route responsible for letting the survivor update his location
 routes.put("/survivors/:id", SurvivorController.update);
+//route to be used to inform if a user has been infected.
+routes.put("/survivors/:id/reportinfection/:id2", SurvivorController.reportInfection);
 
 module.exports = routes;
