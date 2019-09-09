@@ -79,4 +79,28 @@ module.exports = {
     })
   },
 
+  // return the average amount of each resource per survivor
+  async average(req, res){
+    var water = 0;
+    var ammunition = 0;
+    var medication = 0;
+    var food = 0;
+
+    const survivors =  await Survivor.find();
+
+    for (let i in survivors) {
+      water = water + survivors[i].resources.Water;
+      ammunition = ammunition + survivors[i].resources.Ammunition;
+      medication = medication + survivors[i].resources.Medication;
+      food = food + survivors[i].resources.Food;
+    }
+
+    return res.json({
+      "Average of waters per survivor": water/survivors.length,
+      "Average of ammunition per survivor": ammunition/survivors.length,
+      "Average of medication per survivor": medication/survivors.length,
+      "Average of food per survivor": food/survivors.length,
+    })
+  },
+
 };

@@ -22,4 +22,6 @@ routes.get("/survivors/reports/infected", SurvivorController.infected);
 
 routes.get("/survivors/reports/noninfected", SurvivorController.nonInfected);
 
+routes.get("/survivors/reports/averageamount", SurvivorController.average);
+
 module.exports = routes;
