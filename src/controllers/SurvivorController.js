@@ -45,5 +45,38 @@ module.exports = {
           message: 'The survivor cannot report himself as infected!',
         })
     }
-  }
+  },
+
+  // return the percentage of infected survivors
+  async infected(req, res){
+    var infectedSurvivors = 0;
+    const survivors =  await Survivor.find();
+
+    for (let i in survivors) {
+      if(survivors[i].infected){
+        infectedSurvivors++;
+      }
+    }
+
+    return res.json({
+      "Percentage of infected survivors": (infectedSurvivors/survivors.length)*100 + "%",
+    })
+  },
+
+  // return the percentage of non-infected survivors
+  async nonInfected(req, res){
+    var nonInfectedSurvivors = 0;
+    const survivors =  await Survivor.find();
+
+    for (let i in survivors) {
+      if(!survivors[i].infected){
+        nonInfectedSurvivors++;
+      }
+    }
+
+    return res.json({
+      "Percentage of non infected survivors": (nonInfectedSurvivors/survivors.length)*100 + "%",
+    })
+  },
+
 };
