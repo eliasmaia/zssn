@@ -27,13 +27,16 @@ module.exports = {
   //function reportInfection, responsible for reporting if a survivor has been infected.
   async reportInfection(req, res){
     if( req.params.id != req.params.id2){
-      if(req.params.infections < 3){
+
+      if(req.body.infections < 3){
         const survivor = await Survivor.findByIdAndUpdate(req.params.id, req.body, { new:true});
+
         return res.json(survivor);
-      } else {
+      }
+       else if (req.body.infected ) {
         res.json({
-          success: false,
-          message: 'The survivor has not been reported as infected 3 times yet!',
+          success: true,
+          message: 'The survivor is infected, he has already been reported as infected 3 times!',
         })
       }
     } else {
