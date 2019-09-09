@@ -10,5 +10,11 @@ module.exports = {
     return res.json(survivors);
   },
 
+  //function store will create new survivors
+  async store(req, res){
+    const survivor = await Survivor.create(req.body);
+
+    return res.json(survivor);
+  }
 
 };

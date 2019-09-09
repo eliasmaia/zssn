@@ -11,5 +11,7 @@ const SurvivorController = require('./controllers/SurvivorController');
 
 //Route responsible to get all survivors
 routes.get("/survivors", SurvivorController.index);
+//route responsible for creating the survivors
+routes.post("/survivors", SurvivorController.store);
 
 module.exports = routes;

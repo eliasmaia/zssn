@@ -4,6 +4,7 @@ const requireDir = require('require-dir');
 
 //Initiating the app
 const app = express();
+app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/backend-test', { useNewUrlParser: true });
 requireDir('./src/models');
