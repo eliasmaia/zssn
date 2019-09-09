@@ -13,5 +13,7 @@ const SurvivorController = require('./controllers/SurvivorController');
 routes.get("/survivors", SurvivorController.index);
 //route responsible for creating the survivors
 routes.post("/survivors", SurvivorController.store);
+//route responsible for letting the survivor update his location
+routes.put("/survivors/:id", SurvivorController.update);
 
 module.exports = routes;

@@ -15,6 +15,13 @@ module.exports = {
     const survivor = await Survivor.create(req.body);
 
     return res.json(survivor);
-  }
+  },
+
+  //function update, will be responsible for letting the survivor update his location
+  async update(req, res){
+    const survivor = await Survivor.findByIdAndUpdate(req.params.id, req.body, { new: true});
+
+    return res.json(survivor);
+  },
 
 };
