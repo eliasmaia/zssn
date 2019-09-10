@@ -93,25 +93,52 @@ Just create a new issue in this repo and we will respond and get back to you qui
 
 
 ---------------------------------------
-## Solution
-In order to accomplish this challenge, I decided to use Javascropt (Node + Express). 
+# Solution
+In order to accomplish this challenge, I decided to use Javascript (Node + Express) language/framework option. 
 
 # How to get started
-First, inside the directory of the project, type 
+After cloning the repository, you should type  
 
-> npm init -y
+> npm install
 
-This will create an default empty npm project, with a package.json file. 
+so all the dependencies of the project will be installed. 
 
-After that, type
+For this project, it was used:
+  - node.js
+  - express.js
+  - mongodb
+  - robo 3t
+  - insomnia
+  
+API endpoints documention:
 
-> npm install express
+| TYPE         | Endpoint | Result |
+|--------------|----------|----------| 
+| GET      | /survivors | Return all survivors in ZSSN |
+| POST       | /survivors | Creates a new survivor in ZSSN |
+| PUT | /survivors/:id | Updates a survivor's location in ZSSN |
+| PUT | /survivors/:id/reportinfection/:id2  | The second survivor reports the first one as infected |
+| GET | /survivors/reports/infected | Reports the percentage of infected users in ZSSN |
+| GET | /survivors/reports/noninfected  | Reports the percentage of non infected users in ZSSN |
+| GET | /survivors/reports/averageamount  | Reports the avereage amount of resources per user in ZSSN |
 
-so that we will be able to use express.
 
-When starting to code, it's interesting to install nodemon, which is a library that automatically restarts the server when a change is made. The "-D" is only for it to be installed as in Development mode.
-> npm install -D nodemon
+Example of a request to create a survivor:
+```
+{
+    name: 'Mauricio',
+    age: 25,
+    gender: 'Male',
+    location: {
+      latitude: 2931.21,
+      longitude: 2132.31,
+    },
+    resources: {
+      Water: 1,
+      Ammunition: 2,
+      Medication: 3,
+      Food: 5,
+    },
+  }
 
-To start the server, type
-> nodemon server.js
 
